@@ -24,7 +24,7 @@ For each plot I will:
 
     * Construct the plot and save it to a PNG file.
 
-    * Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. Your code file should include code for reading the data so that the plot can be fully reproduced. You should also include the code that creates the PNG file. Only include the code for a single plot (i.e. plot1.R should only include code for producing plot1.png)
+    * Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. The code file will include code for reading the data so that the plot can be fully reproduced. I will  also include the code that creates the PNG file. _e.g. I will only include the code for a single plot (i.e. plot1.R should only include code for producing plot1.png)_
 
     * Upload the PNG file on the Assignment submission page
 
