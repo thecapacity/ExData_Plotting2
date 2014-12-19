@@ -7,9 +7,8 @@
 source("load_data.R")
 ## Loads two data sets, emissions_data and classification_data
 
-## Subset Data, just to be sure)
+## Subset Data, just to be sure
 selection <- subset(emissions_data, year == 1999 | year == 2002 | year == 2005 | year == 2008)
-##selection <- emissions_data[emissions_data$year == 1999 | emissions_data$year == 2002 | emissions_data$year == 2005 | emissions_data$year == 2008,]
 
 ## Totals
 totals <- data.frame( row.names=c("1999", "2002", "2005", "2008"), totals=c(
