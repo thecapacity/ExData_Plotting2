@@ -22,22 +22,8 @@ aggregates$type = as.factor(aggregates$type)
 #Output graph to file
 png(filename = "plot3.png", width=480, height=480, units="px", bg="white") #bg="transparent")
 
-## Better Solution:
-qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"), facets= . ~ type)
-# Log smooths Data
-## qplot(year, log(Emissions), data=aggregates, geom=c("point", "smooth"), color=type, facets= .~type)
-
-# Linear Regression
-## qplot(year, log(Emissions), data=aggregates, geom=c("point", "smooth"), color=type, method="lm", facets=type~.)
-
-## Not as good due to axis scaling
-##Swap Axis: qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"), facets=type ~ .)
-
-## Original Solution:
-## qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"))
-
-## Bad Alternative: Histogram for 1 year
-## qplot(year, data=aggregates[ aggregates$year==1999,], fill=type)
+## Best Solution:
+qplot(year, log(Emissions), data=aggregates, geom=c("point", "smooth"), color=type, method="lm", facets=.~type)
 
 #Close device
 dev.off()
