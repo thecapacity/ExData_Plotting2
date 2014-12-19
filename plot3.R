@@ -22,7 +22,14 @@ aggregates$type = as.factor(aggregates$type)
 #Output graph to file
 png(filename = "plot3.png", width=480, height=480, units="px", bg="white") #bg="transparent")
 
-qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"))
+## Better Solution:
+qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"), facets= . ~ type)
+
+## Original Solution:
+## qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"))
+
+## Bad Alternative: Histogram for 1 year
+## qplot(year, data=aggregates[ aggregates$year==1999,], fill=type)
 
 #Close device
 dev.off()
