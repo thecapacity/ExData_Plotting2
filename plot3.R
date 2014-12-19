@@ -17,9 +17,12 @@ selection <- subset(selection, fips == "24510")
 
 ## Totals
 aggregates <- aggregate(Emissions ~ year + type, data=selection, FUN=sum)
+aggregates$type = as.factor(aggregates$type)
 
 #Output graph to file
-## png(filename = "plot2.png", width=480, height=480, units="px", bg="white") #bg="transparent")
+png(filename = "plot3.png", width=480, height=480, units="px", bg="white") #bg="transparent")
+
+qplot(year, Emissions, data=aggregates, color=type, geom=c("point", "smooth"))
 
 #Close device
-##dev.off()
+dev.off()
