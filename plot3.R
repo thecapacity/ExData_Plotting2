@@ -20,10 +20,11 @@ aggregates <- aggregate(Emissions ~ year + type, data=selection, FUN=sum)
 aggregates$type = as.factor(aggregates$type)
 
 #Output graph to file
-png(filename = "plot3.png", width=480, height=480, units="px", bg="white") #bg="transparent")
+png(filename = "plot3.png", width=480, height=480, units="px", bg="white")
 
 ## Best Solution:
-qplot(year, log(Emissions), data=aggregates, geom=c("point", "smooth"), color=type, method="lm", facets=.~type)
+qplot(year, log(Emissions), data=aggregates, geom=c("point", "smooth"), color=type, method="lm", 
+      facets=.~type) + labs(title="Baltimore City Emissions by Type")
 
 #Close device
 dev.off()
