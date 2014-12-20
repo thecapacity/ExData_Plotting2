@@ -1,5 +1,9 @@
 ##library("data.table")
 
+#Could also consider: 
+# rm(list=ls())
+# to ensure pristine working environment
+
 #Get data if it doesn't exist
 if (! file.exists("data")) {
     dir.create("data")
