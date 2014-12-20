@@ -7,10 +7,9 @@ if (! file.exists("data")) {
     download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip", mode="wb",
                     destfile=data_file, method="curl")
     dateDownloaded <- date()
-    
-    unzip("./data/data.zip")
 }
 
+unzip("./data/data.zip")
 emissions_data <- readRDS("summarySCC_PM25.rds")
 classification_data <- readRDS("Source_Classification_Code.rds")
 
