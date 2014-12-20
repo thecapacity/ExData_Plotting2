@@ -23,6 +23,8 @@ auto_emissions_selection <- subset(auto_emissions_data, fips == "24510" | fips =
 
 ## Totals
 aggregates <- aggregate(Emissions ~ year + fips, data=auto_emissions_selection, FUN=sum)
+## Maybe could also have done: aggregate(<datasetname>, by=(Emissions, year, fips)...)
+
 ## Cleanup fips code for Legend
 aggregates[aggregates$fips == "06037","fips"] = "LA County"
 aggregates[aggregates$fips == "24510","fips"] = "BAL City"
