@@ -13,7 +13,7 @@ source("load_data.R")
 ## Loads two data sets, emissions_data and classification_data
 
 ## Subset to Baltimore City, Maryland (fips == "24510")
-selection <- subset(selection, fips == "24510")
+selection <- subset(emissions_data, fips == "24510")
 
 ## Totals
 aggregates <- aggregate(Emissions ~ year + type, data=selection, FUN=sum)
